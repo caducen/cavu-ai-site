@@ -1,0 +1,157 @@
+"use client"
+
+import { motion } from "framer-motion"
+import { ArrowRight, PlayCircle } from "lucide-react"
+import Link from "next/link"
+import { Button } from "@/components/ui/button"
+
+const stagger = {
+  initial: { opacity: 0, y: 24 },
+  animate: { opacity: 1, y: 0 },
+}
+
+const heroStats = [
+  { label: "Systems Engineering Experience", value: "30+ Years" },
+  { label: "Gripen E AI Integration Leader", value: "JAS 39" },
+  { label: "MSc Systems Engineering for Defense", value: "Cranfield" },
+  { label: "Cross-Industry Innovation Specialist", value: "Global" },
+]
+
+export function Hero() {
+  return (
+    <section id="top" className="relative overflow-hidden pb-24 pt-32">
+      <div className="absolute inset-0 -z-10">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(59,130,246,0.18),transparent_55%)]" />
+        <div className="pointer-events-none absolute right-0 top-1/2 h-[520px] w-[520px] -translate-y-1/2 rounded-full bg-gradient-to-br from-secondary/20 via-primary/10 to-transparent blur-3xl" />
+      </div>
+      <div className="mx-auto flex max-w-6xl flex-col gap-12 px-6">
+        <motion.div
+          initial="initial"
+          animate="animate"
+          transition={{ staggerChildren: 0.12, delayChildren: 0.1 }}
+          className="relative flex flex-col gap-8 overflow-hidden rounded-3xl border border-white/10 bg-black/40 p-8 text-center shadow-lg shadow-black/40 backdrop-blur md:p-12 lg:text-left"
+        >
+          <motion.span
+            variants={stagger}
+            className="mx-auto inline-flex items-center gap-2 rounded-full border border-white/10 bg-black/50 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-secondary shadow-lg shadow-secondary/20 lg:mx-0"
+          >
+            Ceiling And Visibility Unlimited
+          </motion.span>
+          <motion.h1
+            variants={stagger}
+            className="text-balance text-4xl font-semibold leading-tight text-white sm:text-5xl md:text-6xl"
+          >
+            AI Systems Engineering That Delivers
+            <span className="block bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+              Clarity in Complexity
+            </span>
+          </motion.h1>
+          <motion.p
+            variants={stagger}
+            className="mx-auto max-w-3xl text-lg text-gray-200 lg:mx-0"
+          >
+            From fighter cockpits to boardrooms—bridging 30+ years of aerospace systems engineering with cutting-edge AI
+            innovation. We don&apos;t just implement AI; we architect human-machine collaboration that empowers leaders and
+            transforms organizations.
+          </motion.p>
+          <motion.div
+            variants={stagger}
+            className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start"
+          >
+            <Button asChild size="lg" className="rounded-full px-6 text-base">
+              <Link href="#contact" className="flex items-center gap-2">
+                Schedule Your Strategy Session
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </Button>
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className="rounded-full border-white/30 bg-black/20 px-6 text-base text-gray-200 hover:border-white/60"
+            >
+              <Link href="#process" className="flex items-center gap-2">
+                <PlayCircle className="h-5 w-5" /> Explore Our Approach
+              </Link>
+            </Button>
+          </motion.div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0.96, y: 32 }}
+          whileInView={{ opacity: 1, scale: 1, y: 0 }}
+          viewport={{ amount: 0.3, once: true }}
+          transition={{ type: "spring", stiffness: 120, damping: 20 }}
+          className="relative flex flex-col gap-6 rounded-3xl border border-white/10 bg-black/70 p-8 shadow-2xl shadow-primary/10 backdrop-blur-xl"
+        >
+          <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+            <div className="max-w-xl space-y-2 text-left">
+              <h2 className="text-2xl font-semibold tracking-tight text-white">
+                Aerospace-grade systems thinking for leaders navigating AI transformation.
+              </h2>
+              <p className="text-sm text-gray-200">
+                Oscar Caducén blends Swedish Air Force precision with human-centric AI design—helping organizations see
+                further, decide with clarity, and move with confidence.
+              </p>
+            </div>
+            <div className="grid grid-cols-2 gap-4 text-center text-sm sm:grid-cols-4">
+              {heroStats.map((stat) => (
+                <div key={stat.label} className="rounded-2xl border border-white/10 bg-white/5 p-3">
+                  <p className="font-heading text-lg font-semibold text-white">{stat.value}</p>
+                  <p className="text-xs text-gray-400">{stat.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="relative overflow-hidden rounded-[1.4rem] border border-white/10 bg-gradient-to-br from-primary/20 via-secondary/10 to-transparent p-1">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(139,92,246,0.28),transparent_45%)]" />
+            <div className="relative rounded-[1.2rem] bg-black/80 p-6 shadow-inner">
+              <div className="grid gap-6 md:grid-cols-2">
+                <div className="space-y-3">
+                  <p className="text-xs uppercase tracking-[0.3em] text-gray-400">Mission</p>
+                  <p className="text-sm text-gray-200">
+                    Helping you see further, decide with clarity, and unlock new horizons of potential with AI systems that
+                    are engineered for trust, performance, and human partnership.
+                  </p>
+                </div>
+                <div className="space-y-3">
+                  <p className="text-xs uppercase tracking-[0.3em] text-gray-400">What We Deliver</p>
+                  <ul className="grid gap-2 text-sm text-gray-200">
+                    <li className="rounded-2xl border border-white/10 bg-black/50 px-4 py-2">
+                      Aerospace-grade systems thinking for executive clarity
+                    </li>
+                    <li className="rounded-2xl border border-white/10 bg-black/50 px-4 py-2">
+                      Human-centric AI architectures that integrate without friction
+                    </li>
+                    <li className="rounded-2xl border border-white/10 bg-black/50 px-4 py-2">
+                      Leadership frameworks forged in high-stakes environments
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ amount: 0.4, once: true }}
+          className="flex flex-col justify-between gap-6 rounded-2xl border border-white/10 bg-black/60 px-6 py-5 text-xs text-gray-400 sm:flex-row sm:items-center"
+        >
+          <p className="text-sm uppercase tracking-[0.3em] text-gray-200">
+            CAVU AI · Led by Oscar Caducén, MSc, LtCol (ret)
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-4 text-center text-xs sm:justify-end">
+            <span className="rounded-full border border-white/15 bg-black/40 px-4 py-2 text-gray-200">
+              JAS 39 Gripen E Information Intelligence Systems
+            </span>
+            <span className="rounded-full border border-white/15 bg-black/40 px-4 py-2 text-gray-200">
+              Aerospace Systems Thinking × Human-Centric AI Design
+            </span>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  )
+}
