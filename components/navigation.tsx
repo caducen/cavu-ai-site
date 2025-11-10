@@ -1,9 +1,10 @@
 "use client"
 
 import * as React from "react"
+import Image from "next/image"
 import Link from "next/link"
 import { motion, useMotionValueEvent, useScroll } from "framer-motion"
-import { Menu, Sparkles } from "lucide-react"
+import { Menu } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import {
   Sheet,
@@ -34,24 +35,30 @@ export function Navigation() {
       initial={false}
       animate={{
         backdropFilter: isScrolled ? "blur(16px)" : "blur(0px)",
-        backgroundColor: isScrolled ? "rgba(6, 12, 28, 0.68)" : "rgba(6, 12, 28, 0.0)",
+        backgroundColor: isScrolled
+          ? "rgba(10, 15, 30, 0.72)"
+          : "rgba(10, 15, 30, 0.0)",
         borderBottomColor: isScrolled ? "rgba(148, 163, 184, 0.18)" : "rgba(0,0,0,0)",
       }}
       transition={{ type: "spring", stiffness: 150, damping: 24 }}
       className="sticky top-0 z-50 border-b border-transparent"
     >
       <div className="mx-auto flex h-20 w-full max-w-6xl items-center px-6">
-        <Link href="#top" className="group flex items-center gap-2 text-white">
-          <motion.span
-            className="grid h-10 w-10 place-items-center rounded-full bg-gradient-to-br from-primary/80 via-secondary/70 to-primary/50 text-white shadow-lg shadow-primary/40"
-            whileHover={{ rotate: 6, scale: 1.05 }}
-            transition={{ type: "spring", stiffness: 200, damping: 18 }}
+        <Link href="#top" className="group flex items-center gap-3 text-foreground">
+          <motion.div
+            className="relative h-10 w-10 overflow-hidden rounded-full border border-primary/30 bg-white shadow-lg shadow-primary/20 transition group-hover:shadow-primary/40 dark:border-white/20 dark:bg-white/5"
+            whileHover={{ rotate: 2, scale: 1.05 }}
+            transition={{ type: "spring", stiffness: 220, damping: 20 }}
           >
-            <Sparkles className="h-5 w-5" />
-          </motion.span>
+            <Image src="/cavu-logo-new.png" alt="CAVU AI logo" fill className="object-contain" priority />
+          </motion.div>
           <div className="flex flex-col leading-4">
-            <span className="font-heading text-lg font-semibold tracking-tight">CAVU AI</span>
-            <span className="text-xs text-gray-400">Ceiling And Visibility Unlimited</span>
+            <span className="font-heading text-lg font-semibold tracking-tight text-slate-900 transition dark:text-white">
+              CAVU AI
+            </span>
+            <span className="text-xs uppercase tracking-[0.35em] text-slate-500 transition dark:text-gray-400">
+              Ceiling And Visibility Unlimited
+            </span>
           </div>
         </Link>
         <nav className="ml-auto hidden items-center gap-8 lg:flex">
@@ -59,7 +66,7 @@ export function Navigation() {
             <Link
               key={item.href}
               href={item.href}
-              className="text-sm font-medium text-gray-400 transition hover:text-white"
+              className="text-sm font-medium text-slate-600 transition hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 dark:text-gray-300 dark:hover:text-white"
             >
               {item.label}
             </Link>
@@ -87,20 +94,32 @@ function MobileMenu() {
           <span className="sr-only">Open navigation</span>
         </Button>
       </SheetTrigger>
-      <SheetContent side="right" className="glass-panel border-l border-white/10 bg-background/80">
+      <SheetContent
+        side="right"
+        className="glass-panel border-l border-white/10 bg-background/90 text-foreground transition dark:border-white/15"
+      >
         <div className="flex items-center justify-between">
-          <div className="flex flex-col">
-            <span className="font-heading text-lg font-semibold">CAVU AI</span>
-            <span className="text-xs text-gray-400">Ceiling And Visibility Unlimited</span>
+          <div className="flex items-center gap-3">
+            <div className="relative h-9 w-9 overflow-hidden rounded-full border border-primary/25 bg-white shadow dark:border-white/20 dark:bg-white/10">
+              <Image src="/cavu-logo-new.png" alt="CAVU AI logo" fill className="object-contain" />
+            </div>
+            <div className="flex flex-col">
+              <span className="font-heading text-lg font-semibold text-slate-900 transition dark:text-white">
+                CAVU AI
+              </span>
+              <span className="text-xs uppercase tracking-[0.35em] text-slate-500 transition dark:text-gray-400">
+                Ceiling And Visibility Unlimited
+              </span>
+            </div>
           </div>
         </div>
-        <Separator className="my-6 bg-white/10" />
+        <Separator className="my-6 bg-white/10 dark:bg-white/10" />
         <div className="flex flex-col gap-4 text-base font-medium">
           {NAV_ITEMS.map((item) => (
             <SheetClose asChild key={item.href}>
               <Link
                 href={item.href}
-                className="rounded-lg border border-transparent px-3 py-2 transition hover:border-primary/40 hover:bg-primary/10"
+                className="rounded-xl border border-transparent bg-white/70 px-3 py-2 text-slate-700 transition hover:border-primary/50 hover:bg-primary/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 dark:bg-transparent dark:text-gray-200 dark:hover:border-primary/40"
               >
                 {item.label}
               </Link>
@@ -118,7 +137,7 @@ function MobileMenu() {
               asChild
               variant="outline"
               size="lg"
-              className="w-full rounded-full border-white/20 bg-transparent text-gray-200"
+              className="w-full rounded-full border-slate-300 text-slate-700 hover:bg-slate-100 dark:border-white/20 dark:text-gray-200 dark:hover:bg-white/10"
             >
               <Link href="#process">Explore Our Approach</Link>
             </Button>
