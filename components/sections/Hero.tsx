@@ -1,28 +1,47 @@
 "use client"
 
+import Image from "next/image"
 import { motion } from "framer-motion"
 import { ArrowRight, PlayCircle } from "lucide-react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
+import { useTranslation } from "@/lib/useTranslation"
 
 const stagger = {
   initial: { opacity: 0, y: 24 },
   animate: { opacity: 1, y: 0 },
 }
 
-const heroStats = [
-  { label: "Systems Engineering Experience", value: "30+ Years" },
-  { label: "Gripen E AI Integration Leader", value: "JAS 39" },
-  { label: "MSc Systems Engineering for Defense", value: "Cranfield" },
-  { label: "Cross-Industry Innovation Specialist", value: "Global" },
-]
-
 export function Hero() {
+  const { t } = useTranslation()
+
+  const stats = [t.hero.stat1, t.hero.stat2, t.hero.stat3, t.hero.stat4]
+
   return (
     <section id="top" className="relative overflow-hidden pb-24 pt-32">
-      <div className="absolute inset-0 -z-10">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(59,130,246,0.18),transparent_55%)]" />
-        <div className="pointer-events-none absolute right-0 top-1/2 h-[520px] w-[520px] -translate-y-1/2 rounded-full bg-gradient-to-br from-secondary/20 via-primary/10 to-transparent blur-3xl" />
+      <div className="absolute inset-0 -z-30">
+        <video
+          className="hidden h-full w-full object-cover md:block"
+          autoPlay
+          loop
+          muted
+          playsInline
+          poster="/hero-poster.jpg"
+        >
+          <source src="/hero-video.mp4" type="video/mp4" />
+        </video>
+        <Image
+          src="/hero-poster.jpg"
+          alt=""
+          fill
+          priority
+          className="h-full w-full object-cover md:hidden"
+        />
+      </div>
+      <div className="absolute inset-0 -z-20 bg-black/60" />
+      <div className="pointer-events-none absolute inset-0 -z-10">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(59,130,246,0.18),transparent_55%)]" />
+        <div className="absolute right-0 top-1/2 h-[520px] w-[520px] -translate-y-1/2 rounded-full bg-gradient-to-br from-secondary/20 via-primary/10 to-transparent blur-3xl" />
       </div>
       <div className="mx-auto flex max-w-6xl flex-col gap-12 px-6">
         <motion.div
@@ -35,32 +54,27 @@ export function Hero() {
             variants={stagger}
             className="mx-auto inline-flex items-center gap-2 rounded-full border border-white/10 bg-black/50 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-secondary shadow-lg shadow-secondary/20 lg:mx-0"
           >
-            Ceiling And Visibility Unlimited
+            {t.about.tagline}
           </motion.span>
           <motion.h1
             variants={stagger}
             className="text-balance text-4xl font-semibold leading-tight text-white sm:text-5xl md:text-6xl"
           >
-            AI Systems Engineering That Delivers
-            <span className="block bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              Clarity in Complexity
-            </span>
+            {t.hero.headline}
           </motion.h1>
           <motion.p
             variants={stagger}
             className="mx-auto max-w-3xl text-lg text-gray-200 lg:mx-0"
           >
-            From fighter cockpits to boardrooms—bridging 30+ years of aerospace systems engineering with cutting-edge AI
-            innovation. We don&apos;t just implement AI; we architect human-machine collaboration that empowers leaders and
-            transforms organizations.
+            {t.hero.subheadline}
           </motion.p>
           <motion.div
             variants={stagger}
             className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start"
           >
             <Button asChild size="lg" className="rounded-full px-6 text-base">
-              <Link href="#contact" className="flex items-center gap-2">
-                Schedule Your Strategy Session
+              <Link href="/#contact" className="flex items-center gap-2">
+                {t.hero.ctaPrimary}
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </Button>
@@ -70,8 +84,8 @@ export function Hero() {
               size="lg"
               className="rounded-full border-white/30 bg-black/20 px-6 text-base text-gray-200 hover:border-white/60"
             >
-              <Link href="#process" className="flex items-center gap-2">
-                <PlayCircle className="h-5 w-5" /> Explore Our Approach
+              <Link href="/#process" className="flex items-center gap-2">
+                <PlayCircle className="h-5 w-5" /> {t.hero.ctaSecondary}
               </Link>
             </Button>
           </motion.div>
@@ -86,19 +100,13 @@ export function Hero() {
         >
           <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
             <div className="max-w-xl space-y-2 text-left">
-              <h2 className="text-2xl font-semibold tracking-tight text-white">
-                Aerospace-grade systems thinking for leaders navigating AI transformation.
-              </h2>
-              <p className="text-sm text-gray-200">
-                Oscar Caducén blends Swedish Air Force precision with human-centric AI design—helping organizations see
-                further, decide with clarity, and move with confidence.
-              </p>
+              <h2 className="text-2xl font-semibold tracking-tight text-white">{t.hero.subheadingTitle}</h2>
+              <p className="text-sm text-gray-200">{t.hero.paragraph1}</p>
             </div>
             <div className="grid grid-cols-2 gap-4 text-center text-sm sm:grid-cols-4">
-              {heroStats.map((stat) => (
-                <div key={stat.label} className="rounded-2xl border border-white/10 bg-white/5 p-3">
-                  <p className="font-heading text-lg font-semibold text-white">{stat.value}</p>
-                  <p className="text-xs text-gray-400">{stat.label}</p>
+              {stats.map((stat) => (
+                <div key={stat} className="rounded-2xl border border-white/10 bg-white/5 p-3">
+                  <p className="font-heading text-sm font-semibold text-white">{stat}</p>
                 </div>
               ))}
             </div>
@@ -108,47 +116,32 @@ export function Hero() {
             <div className="relative rounded-[1.2rem] bg-black/80 p-6 shadow-inner">
               <div className="grid gap-6 md:grid-cols-2">
                 <div className="space-y-3">
-                  <p className="text-xs uppercase tracking-[0.3em] text-gray-400">Mission</p>
-                  <p className="text-sm text-gray-200">
-                    Helping you see further, decide with clarity, and unlock new horizons of potential with AI systems that
-                    are engineered for trust, performance, and human partnership.
-                  </p>
+                  <p className="text-xs uppercase tracking-[0.3em] text-gray-400">{t.hero.missionLabel}</p>
+                  <p className="text-sm text-gray-200">{t.hero.missionText}</p>
                 </div>
                 <div className="space-y-3">
-                  <p className="text-xs uppercase tracking-[0.3em] text-gray-400">What We Deliver</p>
+                  <p className="text-xs uppercase tracking-[0.3em] text-gray-400">{t.hero.deliverLabel}</p>
                   <ul className="grid gap-2 text-sm text-gray-200">
-                    <li className="rounded-2xl border border-white/10 bg-black/50 px-4 py-2">
-                      Aerospace-grade systems thinking for executive clarity
-                    </li>
-                    <li className="rounded-2xl border border-white/10 bg-black/50 px-4 py-2">
-                      Human-centric AI architectures that integrate without friction
-                    </li>
-                    <li className="rounded-2xl border border-white/10 bg-black/50 px-4 py-2">
-                      Leadership frameworks forged in high-stakes environments
-                    </li>
+                    {t.hero.deliverItems.map((item: string) => (
+                      <li key={item} className="rounded-2xl border border-white/10 bg-black/50 px-4 py-2">
+                        {item}
+                      </li>
+                    ))}
                   </ul>
                 </div>
               </div>
             </div>
           </div>
-        </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ amount: 0.4, once: true }}
-          className="flex flex-col justify-between gap-6 rounded-2xl border border-white/10 bg-black/60 px-6 py-5 text-xs text-gray-400 sm:flex-row sm:items-center"
-        >
-          <p className="text-sm uppercase tracking-[0.3em] text-gray-200">
-            CAVU AI · Led by Oscar Caducén, MSc, LtCol (ret)
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-4 text-center text-xs sm:justify-end">
-            <span className="rounded-full border border-white/15 bg-black/40 px-4 py-2 text-gray-200">
-              JAS 39 Gripen E Information Intelligence Systems
-            </span>
-            <span className="rounded-full border border-white/15 bg-black/40 px-4 py-2 text-gray-200">
-              Aerospace Systems Thinking × Human-Centric AI Design
-            </span>
+          <div className="flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-white/10 bg-black/60 px-6 py-5 text-xs text-gray-400">
+            <p className="text-sm uppercase tracking-[0.3em] text-gray-200">CAVU AI · Oscar Caducén</p>
+            <div className="flex flex-wrap items-center justify-center gap-4 text-center text-xs sm:justify-end">
+              {t.hero.chips.map((chip: string) => (
+                <span key={chip} className="rounded-full border border-white/15 bg-black/40 px-4 py-2 text-gray-200">
+                  {chip}
+                </span>
+              ))}
+            </div>
           </div>
         </motion.div>
       </div>

@@ -7,9 +7,11 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
+import { useTranslation } from "@/lib/useTranslation"
 
 export function CTA() {
   const [status, setStatus] = React.useState<"idle" | "loading" | "success" | "error">("idle")
+  const { t } = useTranslation()
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
@@ -39,24 +41,19 @@ export function CTA() {
           className="relative space-y-6 overflow-hidden rounded-3xl border border-white/10 bg-black/50 p-8 shadow-lg shadow-black/40 backdrop-blur"
         >
           <span className="inline-flex items-center rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-gray-400">
-            Ready to Transform
+            {t.cta.badge}
           </span>
-          <h2 className="text-balance text-3xl font-semibold text-white md:text-5xl">
-            Ready to transform your business with AI systems that deliver?
-          </h2>
-          <p className="text-base text-gray-200">
-            Share your goals and weʼll co-design a roadmap that connects the business case to technical execution. Expect a
-            30-minute call with a systems engineer and strategist—no sales scripts.
-          </p>
+          <h2 className="text-balance text-3xl font-semibold text-white md:text-5xl">{t.cta.heading}</h2>
+          <p className="text-base text-gray-200">{t.cta.description}</p>
           <div className="flex flex-wrap gap-4 text-sm text-gray-200">
             <div className="rounded-full border border-white/20 bg-white/10 px-4 py-2">
-              <span className="font-semibold text-primary">3.4x</span> average pipeline acceleration
+              <span className="font-semibold text-primary">3.4x</span> {t.cta.metrics.pipeline}
             </div>
             <div className="rounded-full border border-white/20 bg-white/10 px-4 py-2">
-              <span className="font-semibold text-secondary">98%</span> implementation satisfaction
+              <span className="font-semibold text-secondary">98%</span> {t.cta.metrics.satisfaction}
             </div>
             <div className="rounded-full border border-white/20 bg-white/10 px-4 py-2">
-              <span className="font-semibold text-amber-400">24/7</span> production support options
+              <span className="font-semibold text-amber-400">24h</span> {t.cta.metrics.support}
             </div>
           </div>
         </motion.div>
@@ -70,11 +67,11 @@ export function CTA() {
           <form onSubmit={handleSubmit} className="space-y-5" aria-label="Contact form">
             <div className="grid gap-4 sm:grid-cols-2">
               <div className="space-y-2 text-left">
-                <Label htmlFor="name">Name</Label>
+                <Label htmlFor="name">{t.cta.form.name}</Label>
                 <Input id="name" name="name" placeholder="Jordan Smith" required className="bg-black/30" />
               </div>
               <div className="space-y-2 text-left">
-                <Label htmlFor="email">Email</Label>
+                <Label htmlFor="email">{t.cta.form.email}</Label>
                 <Input
                   id="email"
                   name="email"
@@ -86,15 +83,15 @@ export function CTA() {
               </div>
             </div>
             <div className="space-y-2 text-left">
-              <Label htmlFor="company">Company</Label>
+              <Label htmlFor="company">{t.cta.form.company}</Label>
               <Input id="company" name="company" placeholder="Acme Corp" className="bg-black/30" />
             </div>
             <div className="space-y-2 text-left">
-              <Label htmlFor="message">What challenges can we help solve?</Label>
+              <Label htmlFor="message">{t.cta.form.messageLabel}</Label>
               <Textarea
                 id="message"
                 name="message"
-                placeholder="Share your goals, current bottlenecks, or priority workflows."
+                placeholder={t.cta.form.messagePlaceholder}
                 rows={4}
                 className="resize-none bg-black/30"
               />
@@ -105,7 +102,7 @@ export function CTA() {
               className="flex w-full items-center justify-center gap-2 rounded-full text-base"
               disabled={status === "loading"}
             >
-              {status === "loading" ? "Sending..." : "Schedule Your Strategy Session"}
+              {status === "loading" ? t.cta.form.sending : t.cta.form.submit}
               <Send className="h-4 w-4" />
             </Button>
             <Button
@@ -115,17 +112,15 @@ export function CTA() {
               className="flex w-full items-center justify-center gap-2 rounded-full border border-white/20 bg-transparent text-gray-200 hover:bg-white/10"
             >
               <a href="#book">
-                or schedule a free consultation
+                {t.cta.form.secondary}
                 <ArrowUpRight className="h-4 w-4" />
               </a>
             </Button>
             {status === "success" && (
-              <p className="text-center text-sm text-emerald-400">Thanks! Weʼll reach out within one business day.</p>
+              <p className="text-center text-sm text-emerald-400">{t.cta.form.success}</p>
             )}
             {status === "error" && (
-              <p className="text-center text-sm text-red-400">
-                Something went wrong. Please verify your details or email hello@vectorshift.ai
-              </p>
+              <p className="text-center text-sm text-red-400">{t.cta.form.error}</p>
             )}
           </form>
           <div className="pointer-events-none absolute -left-20 top-1/2 h-60 w-60 -translate-y-1/2 rounded-full bg-primary/30 blur-3xl" />

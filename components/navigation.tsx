@@ -14,17 +14,20 @@ import {
 } from "@/components/ui/sheet"
 import { Separator } from "@/components/ui/separator"
 import { ModeToggle } from "@/components/mode-toggle"
-
-const NAV_ITEMS = [
-  { href: "#services", label: "Services" },
-  { href: "#experience", label: "Experience" },
-  { href: "#about", label: "About" },
-  { href: "#contact", label: "Contact" },
-]
+import { LanguageSwitcher } from "@/components/LanguageSwitcher"
+import { useTranslation } from "@/lib/useTranslation"
 
 export function Navigation() {
   const { scrollY } = useScroll()
   const [isScrolled, setIsScrolled] = React.useState(false)
+  const { t } = useTranslation()
+
+  const navItems = [
+    { href: "/#services", label: t.nav.services },
+    { href: "/#experience", label: t.nav.experience },
+    { href: "/#about", label: t.nav.about },
+    { href: "/#contact", label: t.nav.contact },
+  ]
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     setIsScrolled(latest > 4)
@@ -61,8 +64,8 @@ export function Navigation() {
             </span>
           </div>
         </Link>
-        <nav className="ml-auto hidden items-center gap-8 lg:flex">
-          {NAV_ITEMS.map((item) => (
+        <nav className="ml-auto hidden items-center gap-4 lg:flex">
+          {navItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
@@ -71,21 +74,31 @@ export function Navigation() {
               {item.label}
             </Link>
           ))}
+          <LanguageSwitcher />
           <ModeToggle />
           <Button asChild size="lg" className="rounded-full px-5">
-            <Link href="#contact">Schedule Your Strategy Session</Link>
+            <Link href="/#contact">{t.hero.ctaPrimary}</Link>
           </Button>
         </nav>
         <div className="ml-auto flex items-center gap-2 lg:hidden">
+          <LanguageSwitcher />
           <ModeToggle />
-          <MobileMenu />
+          <MobileMenu navItems={navItems} cta={t.hero.ctaPrimary} secondaryCta={t.hero.ctaSecondary} />
         </div>
       </div>
     </motion.header>
   )
 }
 
-function MobileMenu() {
+function MobileMenu({
+  navItems,
+  cta,
+  secondaryCta,
+}: {
+  navItems: { href: string; label: string }[]
+  cta: string
+  secondaryCta: string
+}) {
   return (
     <Sheet>
       <SheetTrigger asChild>
@@ -115,7 +128,7 @@ function MobileMenu() {
         </div>
         <Separator className="my-6 bg-white/10 dark:bg-white/10" />
         <div className="flex flex-col gap-4 text-base font-medium">
-          {NAV_ITEMS.map((item) => (
+          {navItems.map((item) => (
             <SheetClose asChild key={item.href}>
               <Link
                 href={item.href}
@@ -129,7 +142,7 @@ function MobileMenu() {
         <div className="mt-8 space-y-3">
           <SheetClose asChild>
             <Button asChild size="lg" className="w-full rounded-full">
-              <Link href="#contact">Schedule Your Strategy Session</Link>
+              <Link href="/#contact">{cta}</Link>
             </Button>
           </SheetClose>
           <SheetClose asChild>
@@ -139,7 +152,7 @@ function MobileMenu() {
               size="lg"
               className="w-full rounded-full border-slate-300 text-slate-700 hover:bg-slate-100 dark:border-white/20 dark:text-gray-200 dark:hover:bg-white/10"
             >
-              <Link href="#process">Explore Our Approach</Link>
+              <Link href="/#process">{secondaryCta}</Link>
             </Button>
           </SheetClose>
         </div>

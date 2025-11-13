@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { Inter, Space_Grotesk } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
+import { CookieConsent } from "@/components/cookie-consent"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -31,6 +32,7 @@ export default function RootLayout({
       <body className={`${inter.variable} ${spaceGrotesk.variable} bg-background text-foreground antialiased transition-colors duration-300`}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           {children}
+          <CookieConsent />
         </ThemeProvider>
       </body>
     </html>

@@ -2,39 +2,30 @@
 
 import { motion } from "framer-motion"
 import { Cpu, Globe, ShieldCheck, Target, Users2, Workflow } from "lucide-react"
-import { featureHighlights } from "@/lib/data"
+import { useTranslation } from "@/lib/useTranslation"
 
-const iconMap = {
-  cpu: Cpu,
-  workflow: Workflow,
-  target: Target,
-  shield: ShieldCheck,
-  users: Users2,
-  globe: Globe,
-}
+const iconComponents = [Cpu, ShieldCheck, Users2, Globe]
 
 export function Features() {
+  const { t } = useTranslation()
+  const cards = t.features.cards
+
   return (
     <section id="why" className="relative py-20">
       <div className="mx-auto flex max-w-6xl flex-col gap-12 px-6">
         <div className="relative max-w-2xl space-y-4 overflow-hidden rounded-3xl border border-white/10 bg-black/50 p-8 shadow-lg shadow-black/40 backdrop-blur">
           <span className="inline-flex items-center rounded-full border border-primary/40 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-primary">
-            Why Leaders Choose CAVU AI
+            {t.features.badge}
           </span>
-          <h2 className="text-3xl font-semibold text-white md:text-4xl">
-            Precision, clarity, and human-centric AI integration.
-          </h2>
-          <p className="text-base text-gray-200">
-            We translate fighter pilot discipline and systems engineering mastery into AI programs you can trust—designed to
-            perform in the most complex environments.
-          </p>
+          <h2 className="text-3xl font-semibold text-white md:text-4xl">{t.features.heading}</h2>
+          <p className="text-base text-gray-200">{t.features.subheading}</p>
         </div>
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {featureHighlights.map((feature, idx) => {
-            const Icon = iconMap[feature.icon as keyof typeof iconMap] ?? Cpu
+          {cards.map((card: { title: string; description: string; metric: string }, idx: number) => {
+            const Icon = iconComponents[idx % iconComponents.length] ?? Workflow
             return (
               <motion.article
-                key={feature.title}
+                key={card.title}
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
@@ -45,13 +36,11 @@ export function Features() {
                 <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/15 text-primary">
                   <Icon className="h-6 w-6" />
                 </div>
-                <h3 className="text-xl font-semibold text-white">{feature.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-gray-200">
-                  {feature.description}
-                </p>
+                <h3 className="text-xl font-semibold text-white">{card.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-gray-200">{card.description}</p>
                 <div className="mt-6 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.3em] text-primary">
                   <span className="h-2 w-2 rounded-full bg-primary" />
-                  {feature.metric}
+                  {card.metric}
                 </div>
               </motion.article>
             )
