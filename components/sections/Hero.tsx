@@ -26,12 +26,12 @@ export function Hero() {
           loop
           muted
           playsInline
-          poster="/hero-poster.jpg"
+          poster="/hero-poster.png"
         >
           <source src="/hero-video.mp4" type="video/mp4" />
         </video>
         <Image
-          src="/hero-poster.jpg"
+          src="/hero-poster.png"
           alt=""
           fill
           priority

@@ -95,7 +95,7 @@ export const sv: TranslationKeys = {
   // Case Studies (EXPANDED)
   caseStudies: {
     badge: "Beprövade Resultat i Högriskmiljöer",
-    heading: "Erfarenhet Smädd i Stridsflyg, Tillämpad på Företagsinnovation",
+    heading: "Erfarenhet Smidd i Stridsflyg, Tillämpad på Företagsinnovation",
     description: "Från AI-systemintegration i nästa generations stridsflygplan till transformation av företagsverksamhet—vår meritlista visar tydliga resultat.",
     missionPrefix: "Uppdragsfas",
     items: [
