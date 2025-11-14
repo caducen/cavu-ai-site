@@ -13,10 +13,10 @@ export const sv: TranslationKeys = {
   // Hero Section (EXPANDED)
   hero: {
     headline: "AI Systems Engineering som Levererar Klarhet i Komplexitet",
-    subheadline: "Från stridsflygplan till styrelserum—förenar över 30 års flygsystemteknik med banbrytande AI-innovation. Vi implementerar inte bara AI; vi bygger människa-maskin-samarbete som stärker ledare och transformerar organisationer.",
+    subheadline: "Tidigare överste i svenska flygvapnet och projektledare för JAS 39 Gripen E. Tre decennier av flygsystemteknik applicerad på AI-transformation för modiga ledare.",
     ctaPrimary: "Boka Din Strategisession",
     ctaSecondary: "Utforska Vårt Tillvägagångssätt",
-    stat1: "Över 30 Års Erfarenhet inom Systems Engineering",
+    stat1: "30+ Års Flygerfarenhet",
     stat2: "JAS 39 Gripen E Projekt-ledare",
     stat3: "MSc Systems Engineering för Försvar",
     stat4: "Bransch-över-skridande Innovations-specialist",
@@ -59,7 +59,7 @@ export const sv: TranslationKeys = {
   // Trust Signals
   trust: {
     badge: "Beprövad Expertis från Försvar till Innovation",
-    description: "CAVU AI bygger på över 30 års erfarenhet som stridsflygpilot i svenska Flygvapnet och projektledning för JAS 39 Gripen E, och kombinerar flygsystemteknik med mänskligt centrerad AI-transformation.",
+    description: "CAVU AI bygger på decennier av erfarenhet som stridsflygpilot i svenska flygvapnet och flygsystemteknik, och kombinerar beprövat ledarskap med banbrytande AI-transformation.",
     footer: "Tillämpar flygindustrins systemtänkande på företagsinnovation",
   },
 
@@ -136,16 +136,33 @@ export const sv: TranslationKeys = {
   about: {
     badge: "Från Klar Himmel till Klar Strategi",
     headline: "Över 30 Års Excellens inom Systems Engineering",
-    paragraph1: "Oscar Caducén kombinerar taktisk precision med strategisk vision i AI-implementation. Som tidigare överste och stridsflygpilot i svenska Flygvapnet med över 30 års erfarenhet ledde Oscar delprojektledningen för JAS 39 Gripen E:s informationsintelligensystem—banbrytande AI-integration i ett av världens mest avancerade stridsflygplan.",
+    paragraph1: "Oscar Caducén kombinerar taktisk precision med strategisk vision i AI-implementation. Som tidigare överste och stridsflygpilot i svenska flygvapnet med tre decennier av erfarenhet ledde Oscar delprojektledningen för JAS 39 Gripen E:s informationsintelligensystem—banbrytande AI-integration i ett av världens mest avancerade stridsflygplan.",
     paragraph2: "På CAVU AI tror vi att framtidens människa-maskin-samarbete inte bara handlar om verktyg—det handlar om att bygga broar. Vårt arbete kombinerar systemtänkande, förfinat inom flyg och försvar, med mänskligt centrerad design inspirerad av medvetandestudier.",
-    highlights: [
-      "Strategiskt Opinionsbildande: Drev framgångsrikt JAS 39 Gripen E/F från politiskt beslut till operativ verklighet",
-      "AI Systems Integration: Ledde taktisk systemarkitektur med AESA Radar, IRST och avancerat AI-baserat beslutsfattande",
-      "Global Samverkan: Styrde tvärfunktionella team över fem länder",
-      "Akademisk Excellens: MSc i Systems Engineering för Försvar från Cranfield University",
-      "Stridstestat Ledarskap: Befälhavare för stridsflygdivisioner och Wing Commander Flying"
+    careerHighlights: [
+      {
+        title: "Strategiskt Ledarskap",
+        description: "Drev framgångsrikt JAS 39 Gripen E/F från politiskt beslut till operativ verklighet"
+      },
+      {
+        title: "AI Systems Integration",
+        description: "Ledde taktisk systemarkitektur med AESA Radar, IRST och avancerat AI-baserat beslutsfattande"
+      },
+      {
+        title: "Global Samverkan",
+        description: "Styrde tvärfunktionella team över fem länder"
+      },
+      {
+        title: "Akademisk Excellens",
+        description: "MSc i Systems Engineering för Försvar, Cranfield University"
+      },
+      {
+        title: "Stridstestat Befäl",
+        description: "Befälhavare för stridsflygdivisioner och Wing Commander Flying"
+      }
     ],
+    careerHighlightsTitle: "Karriärhöjdpunkter",
     quote: "Ceiling And Visibility Unlimited är inte bara vårt namn—det är vårt löfte. Precis som piloter behöver klar himmel för optimal prestation behöver organisationer klarhet för att frigöra sin fulla potential.",
+    quoteAuthor: "Oscar Caducén, Grundare & VD",
     tagline: "Ceiling And Visibility Unlimited",
   },
 
@@ -294,7 +311,7 @@ export const sv: TranslationKeys = {
   cta: {
     badge: "Redo att Transformera",
     heading: "Redo för Ceiling And Visibility Unlimited?",
-    description: "Låt oss tillämpa flygindustrins klarhet på er AI-strategi. Boka en konsultation för att upptäcka hur Systems Engineering och mänskligt centrerad design kan transformera er organisation.",
+    description: "Låt oss tillämpa flygindustrins klarhet på er AI-strategi. Boka en kostnadsfri 30-minuters konsultation för att upptäcka hur Systems Engineering och mänskligt centrerad design kan transformera er organisation.",
     metrics: {
       pipeline: "Genomsnittlig pipeline-acceleration",
       satisfaction: "Kundnöjdhetsgrad",
@@ -306,12 +323,17 @@ export const sv: TranslationKeys = {
       company: "Företag",
       messageLabel: "Hur kan vi hjälpa till?",
       messagePlaceholder: "Berätta om era utmaningar och mål...",
-      submit: "Boka Din Strategisession",
+      submit: "Boka Din Kostnadsfria Strategisession",
       secondary: "eller boka ett kostnadsfritt samtal",
       sending: "Skickar...",
       success: "Meddelande skickat! Vi hör av oss inom 24 timmar.",
       error: "Något gick fel. Försök igen eller mejla oss direkt.",
     },
+    benefits: [
+      "Ingen förpliktelse",
+      "30 minuters konsultation",
+      "Garanterade handlingsbara insikter"
+    ],
   },
 
   // Footer (EXPANDED)
@@ -326,7 +348,7 @@ export const sv: TranslationKeys = {
     cookiePolicy: "Cookiepolicy",
     termsOfService: "Användarvillkor",
     allRightsReserved: "Alla rättigheter förbehållna",
-    description: "Grundat av Oscar Caducén, tidigare överste i svenska Flygvapnet och projektledare för JAS 39 Gripen E. CAVU AI kombinerar över 30 års flygsystemteknik med banbrytande AI-innovation.",
+    description: "Grundat av Oscar Caducén, tidigare överste i svenska flygvapnet och projektledare för JAS 39 Gripen E. CAVU AI tillämpar flygsystemteknik på AI-transformation.",
     successMessage: "Tack! Våra nästa insikter landar snart i din inkorg.",
   },
 

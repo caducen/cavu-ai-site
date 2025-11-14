@@ -7,7 +7,7 @@ export function TrustSignals() {
   const { t } = useTranslation()
 
   return (
-    <section className="relative py-16">
+    <section className="relative py-24">
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_center,_rgba(148,163,184,0.15),transparent_65%)]" />
       <div className="relative mx-auto flex max-w-5xl flex-col items-center gap-8 rounded-3xl border border-white/10 bg-black/50 px-6 py-12 text-center shadow-lg shadow-black/40 backdrop-blur">
         <motion.span
@@ -29,9 +29,9 @@ export function TrustSignals() {
           {t.trust.description}
         </motion.p>
         <div className="grid w-full gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {t.about.highlights.map((item: string, idx: number) => (
+          {t.about.careerHighlights.map((item, idx: number) => (
             <motion.div
-              key={item}
+              key={idx}
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
@@ -39,9 +39,9 @@ export function TrustSignals() {
               className="flex h-full flex-col gap-3 rounded-2xl border border-white/10 bg-black/60 p-6 text-left shadow-lg shadow-primary/10"
             >
               <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-gray-200">
-                {item.split(":")[0]}
+                {item.title}
               </h3>
-              <p className="text-sm text-gray-200/80">{item.split(": ")[1] ?? ""}</p>
+              <p className="text-sm text-gray-200/80">{item.description}</p>
             </motion.div>
           ))}
         </div>

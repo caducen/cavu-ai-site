@@ -20,7 +20,7 @@ export function Testimonials() {
   }, [testimonials.length])
 
   return (
-    <section id="testimonials" className="relative py-20">
+    <section id="testimonials" className="relative py-24">
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_right,_rgba(6,182,212,0.2),transparent_65%)]" />
       <div className="relative mx-auto flex max-w-5xl flex-col gap-10 rounded-3xl border border-white/10 bg-black/50 px-6 py-10 text-center shadow-lg shadow-black/40 backdrop-blur">
         <div className="space-y-4">

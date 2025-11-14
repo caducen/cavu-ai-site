@@ -9,7 +9,7 @@ export function CaseStudies() {
   const items = t.caseStudies.items
 
   return (
-    <section id="experience" className="relative py-20">
+    <section id="experience" className="relative py-24">
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_bottom,_rgba(139,92,246,0.25),transparent_65%)]" />
       <div className="mx-auto flex max-w-6xl flex-col gap-12 px-6">
         <div className="relative flex flex-col gap-4 rounded-3xl border border-white/10 bg-black/50 p-8 text-center shadow-lg shadow-black/40 backdrop-blur">

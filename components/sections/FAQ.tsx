@@ -13,7 +13,7 @@ export function FAQ() {
   const { t } = useTranslation()
 
   return (
-    <section id="faq" className="relative py-20">
+    <section id="faq" className="relative py-24">
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_bottom_right,_rgba(245,158,11,0.15),transparent_65%)]" />
       <div className="relative mx-auto flex max-w-4xl flex-col gap-10 rounded-3xl border border-white/10 bg-black/50 px-6 py-10 text-center shadow-lg shadow-black/40 backdrop-blur">
         <div className="space-y-4">

@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import { motion } from "framer-motion"
-import { ArrowUpRight, Send } from "lucide-react"
+import { ArrowUpRight, Check, Send } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -116,6 +116,14 @@ export function CTA() {
                 <ArrowUpRight className="h-4 w-4" />
               </a>
             </Button>
+            <div className="flex flex-wrap items-center justify-center gap-4 text-sm text-gray-300">
+              {t.cta.benefits.map((benefit, idx) => (
+                <div key={idx} className="flex items-center gap-2">
+                  <Check className="h-4 w-4 text-emerald-400" />
+                  <span>{benefit}</span>
+                </div>
+              ))}
+            </div>
             {status === "success" && (
               <p className="text-center text-sm text-emerald-400">{t.cta.form.success}</p>
             )}

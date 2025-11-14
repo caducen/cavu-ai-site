@@ -26,7 +26,7 @@ export function Services() {
   ]
 
   return (
-    <section id="services" className="relative py-20">
+    <section id="services" className="relative py-24">
       <div className="mx-auto flex max-w-6xl flex-col gap-12 px-6">
         <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <div className="relative max-w-2xl space-y-4 overflow-hidden rounded-3xl border border-white/10 bg-black/50 p-8 shadow-lg shadow-black/40 backdrop-blur">

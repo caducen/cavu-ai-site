@@ -11,7 +11,7 @@ export function Features() {
   const cards = t.features.cards
 
   return (
-    <section id="why" className="relative py-20">
+    <section id="why" className="relative py-24">
       <div className="mx-auto flex max-w-6xl flex-col gap-12 px-6">
         <div className="relative max-w-2xl space-y-4 overflow-hidden rounded-3xl border border-white/10 bg-black/50 p-8 shadow-lg shadow-black/40 backdrop-blur">
           <span className="inline-flex items-center rounded-full border border-primary/40 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-primary">

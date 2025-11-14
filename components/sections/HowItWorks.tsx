@@ -12,7 +12,7 @@ export function HowItWorks() {
   const steps = t.process.steps
 
   return (
-    <section id="process" className="relative py-20">
+    <section id="process" className="relative py-24">
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,_rgba(15,23,42,0.45),transparent_65%)]" />
       <div className="relative mx-auto flex max-w-5xl flex-col gap-12 rounded-3xl border border-white/10 bg-black/50 px-6 py-10 text-center shadow-lg shadow-black/40 backdrop-blur">
         <div className="space-y-4">

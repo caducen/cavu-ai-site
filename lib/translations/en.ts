@@ -11,10 +11,10 @@ export const en = {
   // Hero Section (EXPANDED)
   hero: {
     headline: "AI Systems Engineering That Delivers Clarity in Complexity",
-    subheadline: "From fighter cockpits to boardrooms—bridging 30+ years of aerospace systems engineering with cutting-edge AI innovation. We don't just implement AI; we architect human-machine collaboration that empowers leaders and transforms organizations.",
+    subheadline: "Former Swedish Air Force Lieutenant Colonel and JAS 39 Gripen E Project Manager. Three decades of aerospace systems engineering applied to AI transformation for bold leaders.",
     ctaPrimary: "Schedule Your Strategy Session",
     ctaSecondary: "Explore Our Approach",
-    stat1: "30+ Years Systems Engineering Experience",
+    stat1: "30+ Years Aerospace Experience",
     stat2: "JAS 39 Gripen E Project Lead",
     stat3: "MSc Systems Engineering for Defense",
     stat4: "Cross-Industry Innovation Specialist",
@@ -57,7 +57,7 @@ export const en = {
   // Trust Signals
   trust: {
     badge: "Trusted Expertise from Defense to Innovation",
-    description: "CAVU AI draws on 30+ years of Swedish Air Force fighter pilot experience and JAS 39 Gripen E project management, combining aerospace systems engineering with human-centric AI transformation.",
+    description: "CAVU AI draws on decades of Swedish Air Force fighter pilot experience and aerospace systems engineering, combining battle-tested leadership with cutting-edge AI transformation.",
     footer: "Bringing aerospace-grade systems thinking to business innovation",
   },
 
@@ -134,16 +134,33 @@ export const en = {
   about: {
     badge: "From Clear Skies to Clear Strategy",
     headline: "30+ Years of Systems Engineering Excellence",
-    paragraph1: "Oscar Caducén brings a rare combination of tactical precision and strategic vision to AI implementation. As a former Swedish Air Force Lieutenant Colonel and fighter pilot with 30+ years of experience, Oscar led the sub-project management for the JAS 39 Gripen E's Information Intelligence Systems—pioneering AI integration in one of the world's most advanced fighter aircraft.",
+    paragraph1: "Oscar Caducén brings a rare combination of tactical precision and strategic vision to AI implementation. As a former Swedish Air Force Lieutenant Colonel and fighter pilot with three decades of experience, Oscar led the sub-project management for the JAS 39 Gripen E's Information Intelligence Systems—pioneering AI integration in one of the world's most advanced fighter aircraft.",
     paragraph2: "At CAVU AI, we believe the future of human and machine collaboration isn't about tools alone—it's about building bridges. Our work blends systems thinking, honed in aerospace and defense, with human-centric design inspired by consciousness studies.",
-    highlights: [
-      "Strategic Advocacy: Successfully advocated for JAS 39 Gripen E/F from political decision to operational reality",
-      "AI Systems Integration: Led tactical system architecture integrating AESA Radar, IRST, and advanced AI-based decision-making",
-      "Global Collaboration: Directed cross-functional teams across five countries",
-      "Academic Excellence: MSc in Systems Engineering for Defense from Cranfield University",
-      "Combat-Tested Leadership: Commanded fighter squadrons and served as Wing Commander Flying"
+    careerHighlights: [
+      {
+        title: "Strategic Leadership",
+        description: "Successfully advocated for JAS 39 Gripen E/F from political decision to operational reality"
+      },
+      {
+        title: "AI Systems Integration",
+        description: "Led tactical system architecture integrating AESA Radar, IRST, and advanced AI-based decision-making"
+      },
+      {
+        title: "Global Collaboration",
+        description: "Directed cross-functional teams across five countries"
+      },
+      {
+        title: "Academic Excellence",
+        description: "MSc in Systems Engineering for Defense, Cranfield University"
+      },
+      {
+        title: "Combat-Tested Command",
+        description: "Commanded fighter squadrons and served as Wing Commander Flying"
+      }
     ],
+    careerHighlightsTitle: "Career Highlights",
     quote: "Ceiling And Visibility Unlimited isn't just our name—it's our promise. Just as pilots need clear skies for optimal performance, organizations need clarity to unlock their full potential.",
+    quoteAuthor: "Oscar Caducén, Founder & CEO",
     tagline: "Ceiling And Visibility Unlimited",
   },
 
@@ -292,7 +309,7 @@ export const en = {
   cta: {
     badge: "Ready to Transform",
     heading: "Ready for Ceiling And Visibility Unlimited?",
-    description: "Let's bring aerospace-grade clarity to your AI strategy. Schedule a consultation to discover how Systems Engineering and human-centric design can transform your organization.",
+    description: "Let's bring aerospace-grade clarity to your AI strategy. Schedule a complimentary 30-minute consultation to discover how Systems Engineering and human-centric design can transform your organization.",
     metrics: {
       pipeline: "Average pipeline acceleration",
       satisfaction: "Client satisfaction rate",
@@ -304,12 +321,17 @@ export const en = {
       company: "Company",
       messageLabel: "How can we help?",
       messagePlaceholder: "Tell us about your challenges and goals...",
-      submit: "Schedule Your Strategy Session",
+      submit: "Schedule Your Free Strategy Session",
       secondary: "or schedule a free consultation",
       sending: "Sending...",
       success: "Message sent! We'll be in touch within 24 hours.",
       error: "Something went wrong. Please try again or email us directly.",
     },
+    benefits: [
+      "No obligation",
+      "30-minute consultation",
+      "Actionable insights guaranteed"
+    ],
   },
 
   // Footer (EXPANDED)
@@ -324,7 +346,7 @@ export const en = {
     cookiePolicy: "Cookie Policy",
     termsOfService: "Terms of Service",
     allRightsReserved: "All rights reserved",
-    description: "Founded by Oscar Caducén, former Swedish Air Force Lieutenant Colonel and JAS 39 Gripen E project manager. CAVU AI combines 30+ years of aerospace systems engineering with cutting-edge AI innovation.",
+    description: "Founded by Oscar Caducén, former Swedish Air Force Lieutenant Colonel and JAS 39 Gripen E project manager. CAVU AI brings aerospace systems engineering to AI transformation.",
     successMessage: "Thanks! Expect our next insights drop in your inbox soon.",
   },
 
