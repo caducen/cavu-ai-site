@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Cpu, GraduationCap, Search, Sparkles, Target, Users } from "lucide-react"
+import { Cpu, GraduationCap, Monitor, Search, Sparkles, Target, Users } from "lucide-react"
 import Link from "next/link"
 import { services } from "@/lib/data"
 import { Button } from "@/components/ui/button"
@@ -13,6 +13,7 @@ const iconMap = {
   target: Target,
   graduation: GraduationCap,
   users: Users,
+  monitor: Monitor,
 }
 
 export function Services() {
@@ -23,6 +24,7 @@ export function Services() {
     { title: t.services.service3Title, description: t.services.service3Desc },
     { title: t.services.service4Title, description: t.services.service4Desc },
     { title: t.services.service5Title, description: t.services.service5Desc },
+    { title: t.services.service6Title, description: t.services.service6Desc },
   ]
 
   return (

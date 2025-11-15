@@ -38,7 +38,7 @@ export const en = {
 
   // Services
   services: {
-    heading: "Five Ways We Transform Your Organization",
+    heading: "Six Ways We Transform Your Organization",
     introTitle: "Precision-engineered services that unlock clarity, speed, and resilience.",
     introDescription:
       "Each engagement applies fighter pilot discipline to your AI strategy—ensuring every system fits your mission profile and accelerates sustainable growth.",
@@ -52,6 +52,8 @@ export const en = {
     service4Desc: "We deliver tailored programs that help professionals explore AI-human collaboration, equipping teams with both technical fluency and new ways of thinking to spark innovation.",
     service5Title: "Sustainable Team Development",
     service5Desc: "We strengthen resilience and create high-performing teams through practical strategies that enhance well-being and long-term productivity.",
+    service6Title: "Professional Website Building & Creation",
+    service6Desc: "We design and develop modern, high-performance websites that reflect your brand identity and business goals—combining aesthetic excellence with technical precision and optimal user experience.",
   },
 
   // Trust Signals

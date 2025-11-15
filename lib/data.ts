@@ -37,4 +37,7 @@ export const services = [
   {
     icon: "users",
   },
+  {
+    icon: "monitor",
+  },
 ]

@@ -40,7 +40,7 @@ export const sv: TranslationKeys = {
 
   // Services
   services: {
-    heading: "Fem Sätt Vi Transformerar Din Organisation",
+    heading: "Sex Sätt Vi Transformerar Din Organisation",
     introTitle: "Precisionsteknik som frigör klarhet, hastighet och motståndskraft.",
     introDescription:
       "Varje uppdrag applicerar stridsflygdisciplin på er AI-strategi—och säkerställer att varje system passar er uppdragprofil och accelererar hållbar tillväxt.",
@@ -54,6 +54,8 @@ export const sv: TranslationKeys = {
     service4Desc: "Vi levererar anpassade program som hjälper medarbetare att utforska människa-AI-samarbete och utrusta team med både teknisk kompetens och nya tankesätt.",
     service5Title: "Hållbar Teamutveckling",
     service5Desc: "Vi stärker motståndskraft och bygger högpresterande team genom praktiska strategier som förbättrar välmående och långsiktig produktivitet.",
+    service6Title: "Professionell Webbplatsbyggnad & Skapande",
+    service6Desc: "Vi designar och utvecklar moderna, högpresterande webbplatser som speglar din varumärkesidentitet och affärsmål—kombinerar estetisk excellens med teknisk precision och optimal användarupplevelse.",
   },
 
   // Trust Signals
