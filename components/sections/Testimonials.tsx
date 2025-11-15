@@ -77,26 +77,30 @@ export function Testimonials() {
             </div>
           </div>
           <div className="grid gap-4">
-            {testimonials.map((testimonial: (typeof testimonials)[number], idx: number) => (
-              <motion.div
-                key={`${testimonial.author}-${idx}`}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.45, delay: idx * 0.08 }}
-                className={`rounded-3xl border border-white/10 p-6 text-left shadow-lg shadow-primary/10 transition ${
-                  active === idx ? "border-primary/60 bg-black/70" : "bg-black/60"
-                }`}
-              >
-                <p className="text-sm text-gray-200">“{testimonial.quote}”</p>
-                <div className="mt-4 text-sm font-semibold text-gray-200">
-                  {testimonial.author}
-                  <span className="block text-xs font-normal uppercase tracking-[0.3em] text-gray-400">
-                    {testimonial.role}
-                  </span>
-                </div>
-              </motion.div>
-            ))}
+            {testimonials
+              .filter((_, idx) => idx !== active)
+              .map((testimonial: (typeof testimonials)[number], filteredIdx: number) => {
+                // Find original index for proper animation delay
+                const originalIdx = testimonials.findIndex((t) => t === testimonial)
+                return (
+                  <motion.div
+                    key={`${testimonial.author}-${originalIdx}`}
+                    initial={{ opacity: 0, y: 24 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ duration: 0.45, delay: filteredIdx * 0.08 }}
+                    className="rounded-3xl border border-white/10 bg-black/60 p-6 text-left shadow-lg shadow-primary/10 transition hover:border-primary/40"
+                  >
+                    <p className="text-sm text-gray-200">"{testimonial.quote}"</p>
+                    <div className="mt-4 text-sm font-semibold text-gray-200">
+                      {testimonial.author}
+                      <span className="block text-xs font-normal uppercase tracking-[0.3em] text-gray-400">
+                        {testimonial.role}
+                      </span>
+                    </div>
+                  </motion.div>
+                )
+              })}
           </div>
         </div>
       </div>

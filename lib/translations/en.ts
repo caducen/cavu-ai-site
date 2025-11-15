@@ -355,9 +355,19 @@ export const en = {
   cookieBanner: {
     title: "Your privacy matters",
     description:
-      "We use essential cookies to keep this site running smoothly and optional features to improve your experience. By continuing you agree to our use of cookies.",
-    accept: "Accept cookies",
-    manage: "Read the cookie policy",
+      "We use essential cookies to keep this site running smoothly and optional features to improve your experience.",
+    accept: "Accept All",
+    customize: "Customize",
+    reject: "Reject All",
+    save: "Save Preferences",
+    necessary: "Necessary",
+    necessaryDesc: "Essential cookies required for the website to function. These cannot be disabled.",
+    analytics: "Analytics",
+    analyticsDesc: "Help us understand how visitors interact with our website to improve performance.",
+    marketing: "Marketing",
+    marketingDesc: "Used to deliver personalized ads and track campaign effectiveness.",
+    preferencesTitle: "Cookie Preferences",
+    preferencesDescription: "Choose which cookies you want to accept. You can change these settings at any time.",
   },
 
   // Common

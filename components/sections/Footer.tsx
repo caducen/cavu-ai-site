@@ -45,7 +45,7 @@ export function Footer() {
       <div className="mx-auto grid max-w-6xl gap-10 px-6 lg:grid-cols-[1.1fr_1fr]">
         <div className="space-y-6 rounded-3xl border border-white/10 bg-black/50 p-8 shadow-lg shadow-black/40 backdrop-blur">
           <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <Link href="/#top" className="inline-flex items-center gap-3 text-white">
+            <Link href="/" scroll={true} className="inline-flex items-center gap-3 text-white">
               <span className="relative grid h-10 w-10 place-items-center overflow-hidden rounded-full border border-white/20 bg-white/10 shadow-lg shadow-primary/30">
                 <Image src="/cavu-footer-logo.png" alt="CAVU AI monogram" fill className="object-contain" sizes="2.5rem" priority />
               </span>

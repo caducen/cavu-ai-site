@@ -47,15 +47,15 @@ export function Navigation() {
       className="sticky top-0 z-50 border-b border-transparent"
     >
       <div className="mx-auto flex h-20 w-full max-w-6xl items-center px-6">
-        <Link href="#top" className="group flex items-center gap-3 text-foreground">
+        <Link href="/" scroll={true} className="group flex items-center gap-3 text-foreground">
           <motion.div
-            className="relative h-10 w-10 overflow-hidden rounded-full border border-primary/30 bg-white shadow-lg shadow-primary/20 transition group-hover:shadow-primary/40 dark:border-white/20 dark:bg-white/5"
+            className="relative h-10 w-10 overflow-hidden rounded-full border border-primary/30 bg-white shadow-lg shadow-primary/20 transition group-hover:shadow-primary/40 dark:border-white/20 dark:bg-white/5 pointer-events-none"
             whileHover={{ rotate: 2, scale: 1.05 }}
             transition={{ type: "spring", stiffness: 220, damping: 20 }}
           >
             <Image src="/cavu-logo-new.png" alt="CAVU AI logo" fill className="object-contain" priority />
           </motion.div>
-          <div className="flex flex-col leading-4">
+          <div className="flex flex-col leading-4 pointer-events-none">
             <span className="font-heading text-lg font-semibold tracking-tight text-slate-900 transition dark:text-white">
               CAVU AI
             </span>

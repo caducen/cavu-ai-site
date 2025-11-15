@@ -357,9 +357,19 @@ export const sv: TranslationKeys = {
   cookieBanner: {
     title: "Din integritet är viktig",
     description:
-      "Vi använder nödvändiga cookies för att webbplatsen ska fungera och valfria funktioner för att förbättra upplevelsen. Genom att fortsätta godkänner du vår användning av cookies.",
-    accept: "Acceptera cookies",
-    manage: "Läs cookiepolicy",
+      "Vi använder nödvändiga cookies för att webbplatsen ska fungera och valfria funktioner för att förbättra upplevelsen.",
+    accept: "Acceptera Alla",
+    customize: "Anpassa",
+    reject: "Avvisa Alla",
+    save: "Spara Inställningar",
+    necessary: "Nödvändiga",
+    necessaryDesc: "Väsentliga cookies som krävs för att webbplatsen ska fungera. Dessa kan inte inaktiveras.",
+    analytics: "Analys",
+    analyticsDesc: "Hjälper oss förstå hur besökare interagerar med vår webbplats för att förbättra prestandan.",
+    marketing: "Marknadsföring",
+    marketingDesc: "Används för att leverera personifierade annonser och spåra kampanjens effektivitet.",
+    preferencesTitle: "Cookie-inställningar",
+    preferencesDescription: "Välj vilka cookies du vill acceptera. Du kan ändra dessa inställningar när som helst.",
   },
 
   // Common
